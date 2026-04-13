@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * ==========================================================
+ * MAIN CLASS - UseCase2TrainConsistMgnt
+ * ==========================================================
+ * * Use Case 2: Add Passenger Bogies to Train
+ * * Description:
+ * This class demonstrates how passenger bogies can be 
+ * managed dynamically using ArrayList operations.
+ * * At this stage, the application:
+ * - Adds new bogies to the train
+ * - Removes existing bogies
+ * - Checks for bogie availability
+ * - Displays the final consist
+ * * This maps CRUD operations using ArrayList.
+ * * @author Developer
+ * @version 2.0
+ */
+public class UseCase2TrainConsistMgnt {
+
+    public static void main(String[] args) {
+
+        // Display Header
+        System.out.println("==========================================");
+        System.out.println(" UC2 - Add Passenger Bogies to Train ");
+        System.out.println("==========================================\n");
+
+        // 1. Create an ArrayList to hold passenger bogies
+        List<String> passengerBogies = new ArrayList<>();
+
+        // 2. CREATE (Add bogies) - add() attaches a new bogie to the train
+        passengerBogies.add("Sleeper");
+        passengerBogies.add("AC Chair");
+        passengerBogies.add("First Class");
+
+        System.out.println("After Adding Bogies:");
+        System.out.println("Passenger Bogies : " + passengerBogies);
+        System.out.println();
+
+        // 3. DELETE (Remove bogie) - remove() detaches a bogie from the train
+        passengerBogies.remove("AC Chair");
+
+        System.out.println("After Removing 'AC Chair':");
+        System.out.println("Passenger Bogies : " + passengerBogies);
+        System.out.println();
+
+        // 4. READ/SEARCH (Check existence) - contains() checks if a bogie is present
+        System.out.println("Checking if 'Sleeper' exists:");
+        boolean hasSleeper = passengerBogies.contains("Sleeper");
+        System.out.println("Contains Sleeper? : " + hasSleeper);
+        System.out.println();
+
+        // 5. Display Final State
+        System.out.println("Final Train Passenger Consist:");
+        System.out.println(passengerBogies);
+
+        System.out.println("\nUC2 operations completed successfully...");
+    }
+}
